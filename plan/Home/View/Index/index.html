@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
+<title>Ideas!</title>
+</head>
+<body>
+<br>
+<div class="container">
+<form action="__URL__/insert" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">What's your ideas?</label>
+    <textarea name="idea" class="form-control" rows="6" placeholder="your idea"></textarea>
+  
+  </div>
+
+
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+
+<volist name="list" id="vo">
+   [ {$vo.id} ] : {$vo.idea} ---     {$vo.create_time|date="y-m-d h:i:s",###} <a href="__URL__/reply?id={$vo.id}">Reply</a><br/><br>
+    </volist>
+</div>
+
+
+    
+</body>
+</html>
